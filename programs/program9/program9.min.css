@@ -1,0 +1,1 @@
+.toDo{display:none}.toDo.open{display:block}.done{text-decoration:line-through;font-size:smaller;opacity:.5}.editForm{display:none}.editForm.open{text-decoration:none;display:block}.listStyle{border-bottom:1px dotted rgba(128,128,128,.349);transition:all .3s ease-in-out}.hide{display:none}

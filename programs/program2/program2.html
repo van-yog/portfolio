@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../src/css/libs.min.css">
+<link rel="icon" href="../../src/icon/js.png" type="image/x-icon">
+    <title>My JS - FavoriteFilm app</title>
+    <style>
+      #editFilm {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Mobile navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-md-none">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../../index.html">Front-End</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../program1/program1.html">1 - Change Text</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program2/program2.html">2 - FavoriteFilm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program3/program3.html">3 - Mouse and shape</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program4/program4.html">4 - VISA/MasterCard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program5/program5.html">5 - Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program6/program6.html">6 - Air Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program7/program7.html">7 - XMLHttpRequest/Fetch</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program8/program8.html">8 - Canvas Spaceship Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../program9/program9.html">9 - ToDo app</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container-fluid">
+      <div class="row m-1">
+        <!-- Header -->
+        <div class="col-12 mx-auto mt-auto text-center mb-3">
+          <header>
+            <h1 class="m-1 d-none d-md-inline">
+              <a href="../../index.html" class="text-muted text-decoration-none ">Frond-End developer</a>
+            </h1>
+            <h2>
+              2 - Favorite Film
+            </h2>
+          </header>
+        </div>
+        <!-- Desktop navigation -->
+        <div class="col-3 d-none d-md-block">
+          <nav>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="font-weight-bold ">
+                My JavaScript apps
+            </span>
+        </li>
+        <li class="list-group-item">
+            <a href="../program1/program1.html">
+                1 - Change Text
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program2/program2.html">
+                2 - FavoriteFilm
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program3/program3.html">
+                3 - Mouse and shape
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program4/program4.html">
+                4 - VISA/MasterCard
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program5/program5.html">
+                5 - Menu
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program6/program6.html">
+                6 - Air Tickets
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program7/program7.html">
+                7 - XMLHttpRequest/Fetch
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program8/program8.html">
+                8 - Canvas Spaceship Game
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="../program9/program9.html">
+                9 - ToDo app
+            </a>
+        </li>
+    </ul>
+</nav>
+        </div>
+        <!-- Main content -->
+        <div class="col-12 col-md-6 mb-5 animated fadeIn slow">
+          <main>
+            <div class="mb-2">
+              <p>This program ceate object Film and you change it by inputs</p>
+              <button
+                type="button"
+                class="btn btn-primary "
+                onclick='document.getElementById("yourFilm").innerHTML=showFavoriteFilm()'
+              >
+                Show Film
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="editFavoriteFilm()">
+                Edit Film
+              </button>
+            </div>
+            <div id="yourFilm"></div>
+            <div id="editFilm">
+              <div class="p-3 border">
+                <form name="formFilm">
+                  <div class="form-group row">
+                    <label for="name" class="col-sm-3 col-form-label">Name of Film</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="name" placeholder="Lord Of The Rings" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="director" class="col-sm-3 col-form-label">Director </label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="director" placeholder="Name of Director" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="year" class="col-sm-3 col-form-label">Year of the film </label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="year" placeholder="2001" />
+                    </div>
+                  </div>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <label class="col-form-label col-sm-3 pt-0">Oscars</label>
+                      <div class="col-sm-9">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gridRadios"
+                            id="oscarYes"
+                            value="Yes"
+                            checked
+                          />
+                          <label class="form-check-label" for="oscarYes">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="oscarNo" value="No" />
+                          <label class="form-check-label" for="oscarNo">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="form-group row">
+                    <label for="rate" class="col-sm-3 col-form-label">Rating</label>
+                    <select class="custom-select col-10 col-sm-5 ml-3" id="rate">
+                      <option selected>Rate...</option>
+                      <option value="1">1 star</option>
+                      <option value="2">2 stars</option>
+                      <option value="3">3 stars</option>
+                      <option value="4">4 stars</option>
+                      <option value="5">5 stars</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick='document.getElementById("yourFilm").innerHTML=saveAndShow()'
+                      >
+                        Save and show
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </main>
+        </div>
+        <!-- Right block with more information -->
+        <div class="col-12 col-md-3 mt-5 mt-md-0">
+          <aside>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="font-weight-bold">
+                  Work with
+                </span>
+              </li>
+              <li class="list-group-item">
+                HTML5 <br />
+                <span class="small text-mutted">
+                  forms, buttons
+                </span>
+              </li>
+              <li class="list-group-item">
+                JavaScript <br />
+                <span class="small text-mutted">
+                  object, functions, getElementById,
+                </span>
+              </li>
+              <li class="list-group-item">
+                Bootstrap <br />
+                <span class="small text-mutted">
+                  navbar, d-none, list-group, btn
+                </span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center p-2 mt-4 bg-light">
+      <div class="col-12 col-md-2">
+        <p>Social</p>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.facebook.com/ivanfilming" target="_blank">
+              <img class="mr-1" src="../../src/icon/facebook_blue.png" alt="facebook" width="20" />
+              facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/papakakmama/" target="_blank">
+              <img class="mr-1" src="../../src/icon/insta_blue.png" alt="insta" width="20" />
+              instagram
+            </a>
+          </li>
+          <li>
+            <a class="d-inline d-md-none" href="viber://add?number=380731016141" target="_blank">
+              <img class="img-fluid mr-1" src="../../src/icon/viber_blue.png" width="20" alt="viber" />
+              viber
+            </a>
+          </li>
+          <li>
+            <a class="d-none d-md-inline" href="viber://chat?number=%2B380731016141" target="_blank">
+              <img class="img-fluid mr-1" src="../../src/icon/viber_blue.png" width="20" alt="viber" />
+              viber
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-2">
+        <p>GitHub</p>
+        <ul class="list-unstyled">
+          <li>
+            repository: <br />
+            <a href="https://github.com/van-yog"><span class="font-weight-bold">van-yog</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-2">
+        <p>Contacts</p>
+        <ul class="list-unstyled">
+          <li>
+            email: <br />
+            <a href="mailto:ikharchenko2008@gmail.com"
+              ><span class="font-weight-bold">ikharchenko2008@gmail.com</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src=" ./program2-min.js"></script>
+
+    <script src="../../src/js/libs.min.js"></script>
+  </body>
+</html>
